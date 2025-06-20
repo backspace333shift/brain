@@ -64,4 +64,4 @@ if found_files:
     print(f"[INFO] Index file written to: {index_path}")
 else:
     print("[WARNING] No Markdown (.md) files found in the notes directory.")
-ECHO is on.
+
