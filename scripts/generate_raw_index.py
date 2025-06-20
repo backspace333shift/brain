@@ -6,41 +6,31 @@ notes_dir = "notes"
 output_dir = "output"
 sitemap_path = os.path.join(output_dir, "sitemap.xml")
 
-print(f"\n[INFO] Scanning directory: {os.path.abspath(notes_dir)}")
-
-if not os.path.exists(notes_dir):
-    print("[ERROR] 'notes/' directory does not exist.")
-    exit(1)
-
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-    print(f"[INFO] Created output directory: {output_dir}")
-
-# Base URLs
 GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
 RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
 index_lines = ["<html><body><h1>Notes Index</h1><ul>"]
-sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+sitemap_lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+]
+
 found_files = []
 
-# Recursively walk through markdown files
 for root, _, files in os.walk(notes_dir):
     for file in files:
         if file.endswith(".md"):
             full_path = os.path.join(root, file)
             relative_md_path = os.path.relpath(full_path, notes_dir)
-            base_name = os.path.splitext(os.path.basename(relative_md_path))[0]
-            output_filename = f"{base_name}.html"
-            output_path = os.path.join(output_dir, output_filename)
+            relative_html_path = relative_md_path.replace(".md", ".html")
+            output_path = os.path.join(output_dir, relative_html_path)
 
-            print(f"[PROCESSING] {relative_md_path}")
             with open(full_path, 'r', encoding='utf-8') as f:
                 text = f.read()
 
             html = markdown.markdown(text)
+            title = relative_md_path.replace(".md", "")
 
-            title = base_name
             full_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,19 +44,18 @@ for root, _, files in os.walk(notes_dir):
 </body>
 </html>"""
 
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(full_html)
 
-            encoded_name = quote(output_filename)
-            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_name}"
-            raw_url = f"{RAW_BASE}/{encoded_name}"
-            display_name = title
+            encoded_path = quote(relative_html_path.replace(os.sep, "/"))
+            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"  # ✅ no 'output' here
+            raw_url = f"{RAW_BASE}/{encoded_path}"
 
-            index_lines.append(f'<li><a href="{rendered_url}">{display_name}</a> [<a href="{raw_url}">raw</a>]</li>')
+            index_lines.append(f'<li><a href="{rendered_url}">{title}</a> [<a href="{raw_url}">raw</a>]</li>')
             sitemap_lines.append(f"<url><loc>{rendered_url}</loc></url>")
             found_files.append(relative_md_path)
 
-# Finalize outputs
 if found_files:
     index_lines.append("</ul></body></html>")
     with open(os.path.join(output_dir, "index.html"), 'w', encoding='utf-8') as f:
