@@ -1,12 +1,14 @@
 import os
 import markdown
 from urllib.parse import quote
+import json
 
 notes_dir = "notes"
 output_dir = "output"
 sitemap_path = os.path.join(output_dir, "sitemap.xml")
+txt_index_path = os.path.join(output_dir, "index.txt")
+json_index_path = os.path.join(output_dir, "brain-index.json")
 
-# ✅ GitHub Pages will serve files from /output/ as the site root
 GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
 RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
@@ -16,9 +18,10 @@ sitemap_lines = [
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 ]
 
+plaintext_urls = []
+json_objects = []
 found_files = []
 
-# Ensure output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
 for root, _, files in os.walk(notes_dir):
@@ -56,7 +59,6 @@ for root, _, files in os.walk(notes_dir):
             rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"
             raw_url = f"{RAW_BASE}/{encoded_path}"
 
-            # 🔍 More crawler-readable link output
             index_lines.append(
                 f'<li>'
                 f'<strong>{title}</strong><br>'
@@ -67,12 +69,23 @@ for root, _, files in os.walk(notes_dir):
                 f'</li>'
             )
 
+            plaintext_urls.append(rendered_url)
             sitemap_lines.append(f"<url><loc>{rendered_url}</loc></url>")
             found_files.append(relative_md_path)
 
-# Write index.html and sitemap.xml
+            json_objects.append({
+                "title": title,
+                "rendered_url": rendered_url,
+                "raw_url": raw_url,
+                "path": relative_md_path
+            })
+
+# Add plaintext block for crawlers into index.html
 if found_files:
-    index_lines.append("</ul></body></html>")
+    index_lines.append("</ul><h2>📂 Plaintext URL List</h2><pre>")
+    index_lines += plaintext_urls
+    index_lines.append("</pre></body></html>")
+
     with open(os.path.join(output_dir, "index.html"), 'w', encoding='utf-8') as f:
         f.write("\n".join(index_lines))
 
@@ -80,6 +93,12 @@ if found_files:
     with open(sitemap_path, 'w', encoding='utf-8') as f:
         f.write("\n".join(sitemap_lines))
 
-    print(f"\n✅ Done. Generated HTML and sitemap for {len(found_files)} notes.")
+    with open(txt_index_path, 'w', encoding='utf-8') as f:
+        f.write("\n".join(plaintext_urls))
+
+    with open(json_index_path, 'w', encoding='utf-8') as f:
+        json.dump(json_objects, f, indent=2)
+
+    print(f"\n✅ Done. Generated {len(found_files)} HTML pages, index.html, index.txt, brain-index.json, and sitemap.xml")
 else:
     print("[WARNING] No Markdown (.md) files found in the notes directory.")
