@@ -15,7 +15,7 @@ if not os.path.exists(output_dir):
     print(f"[INFO] Created output directory: {output_dir}")
 
 # Base URL for GitHub Pages
-GITHUB_PAGES_BASE = "https://backspace333shift.github.io/synced-notes"
+GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
 
 index_lines = ["<html><body><h1>Notes Index</h1><ul>"]
 
