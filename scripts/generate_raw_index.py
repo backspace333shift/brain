@@ -53,12 +53,20 @@ for root, _, files in os.walk(notes_dir):
                 f.write(full_html)
 
             encoded_path = quote(relative_html_path.replace(os.sep, "/"))
-            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"     # ✅ No "/output" prefix
-            raw_url = f"{RAW_BASE}/{encoded_path}"                   # ✅ Raw still includes "/output"
+            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"
+            raw_url = f"{RAW_BASE}/{encoded_path}"
 
+            # 🔍 More crawler-readable link output
             index_lines.append(
-                f'<li><a href="{rendered_url}">{title}</a> [<a href="{raw_url}">raw</a>]</li>'
+                f'<li>'
+                f'<strong>{title}</strong><br>'
+                f'<a href="{rendered_url}">📄 View Rendered</a> | '
+                f'<a href="{raw_url}">📝 Raw</a><br>'
+                f'<code>Rendered: {rendered_url}</code><br>'
+                f'<code>Raw: {raw_url}</code>'
+                f'</li>'
             )
+
             sitemap_lines.append(f"<url><loc>{rendered_url}</loc></url>")
             found_files.append(relative_md_path)
 
