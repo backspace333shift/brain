@@ -4,13 +4,13 @@ import json
 
 notes_dir = "notes"
 output_dir = "output"
-output_html_path = os.path.join(output_dir, "notes.html")
+output_html_path = os.path.join(output_dir, "index.html")  # ← changed here
 sitemap_path = os.path.join(output_dir, "sitemap.xml")
 txt_index_path = os.path.join(output_dir, "index.txt")
 json_index_path = os.path.join(output_dir, "brain-index.json")
 
 GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
-SINGLE_PAGE_NAME = "notes.html"
+SINGLE_PAGE_NAME = "index.html"  # ← changed here
 RENDERED_URL = f"{GITHUB_PAGES_BASE}/{SINGLE_PAGE_NAME}"
 
 os.makedirs(output_dir, exist_ok=True)
