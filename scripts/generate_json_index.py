@@ -33,7 +33,7 @@ for root, _, files in os.walk(notes_dir):
 
 if found_files:
     with open(json_index_path, 'w', encoding='utf-8') as f:
-        json.dump(json_objects, f, indent=2)
+        json.dump(json_objects, f, indent=2, ensure_ascii=False)
 
     print(f"\n✅ JSON-only index generated with {found_files} notes.")
     print(f"- JSON Output: {json_index_path}")
