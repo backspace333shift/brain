@@ -21,8 +21,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: pip install markdown
 
-      - name: Generate HTML and Index
+      - name: Generate HTML and index
         run: |
           mkdir -p output
           python scripts/generate_raw_index.py
@@ -42,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f output/
-          git commit -m "Auto-update: Regenerated HTML and index" || echo "No changes"
+          git commit -m "Auto-update: Regenerated HTML and index" || echo "No changes to commit"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
