@@ -1,0 +1,5 @@
+- woke up at 4 am and didnt sleep afterwards, mistake afternoon crash - headache. stimulation withdrawals
+- ejaculated 2-3 times + 2-3 times day before - felt strong urges and imbalance
+- ate tyrosin + ltheanine + mg glycinate at 7 pm
+- worst night ahead
+-
