@@ -1,0 +1,187 @@
+{
+  "main": {
+    "id": "48c7b723236b5528",
+    "type": "split",
+    "children": [
+      {
+        "id": "d16c15de959c3026",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7e8c2ee56cde81c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b02442eeb9ecc6bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "290e1fed0f5950cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e12605494b883f7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2e1c4dd4109e5b1b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "425f499768865e11",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c2a2be865ee12c28",
+    "type": "split",
+    "children": [
+      {
+        "id": "e0eef9a970c863e2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a38fce32a075ce37",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "23ac82932805c05a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "22ff22dc0a95aa02",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of conflict-files-obsidian-git"
+            }
+          },
+          {
+            "id": "297e63e16d59b08c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "f51bf3215ce4d52d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/mind/Untitled.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Untitled"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 230.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "297e63e16d59b08c",
+  "lastOpenFiles": [
+    "mind/hi 123.md",
+    "mind/okay.md",
+    "notes/mind/Untitled.md",
+    "output/soul/this is a test.html",
+    "index.md",
+    "conflict-files-obsidian-git.md",
+    "Map of Knowledge.md",
+    "Some note.md"
+  ]
+}
