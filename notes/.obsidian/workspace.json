@@ -25,14 +25,12 @@
             "id": "c236c465d67e0e9d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "fixes.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20250620134306.png"
               },
-              "icon": "lucide-file",
-              "title": "fixes"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250620134306"
             }
           }
         ],
@@ -193,12 +191,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c236c465d67e0e9d",
+  "active": "2e12605494b883f7",
   "lastOpenFiles": [
+    "fixes.md",
     "Pasted image 20250620134655.png",
     "Pasted image 20250620134644.png",
     "Pasted image 20250620134306.png",
-    "fixes.md",
     "Pasted image 20250620134257.png",
     "Untitled.md",
     "dailylog1.md",
