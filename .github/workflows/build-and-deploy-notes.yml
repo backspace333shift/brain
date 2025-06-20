@@ -30,7 +30,8 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install markdown
+        run: |
+          pip install markdown pyyaml
 
       - name: Generate Markdown Notes Index
         run: |
