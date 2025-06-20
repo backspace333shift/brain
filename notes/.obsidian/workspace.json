@@ -25,12 +25,14 @@
             "id": "c236c465d67e0e9d",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20250620134306.png"
+                "file": "PLANS/WEEK4.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250620134306"
+              "icon": "lucide-file",
+              "title": "WEEK4"
             }
           }
         ],
@@ -191,12 +193,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2e12605494b883f7",
+  "active": "c236c465d67e0e9d",
   "lastOpenFiles": [
+    "Pasted image 20250620134306.png",
     "fixes.md",
     "Pasted image 20250620134655.png",
     "Pasted image 20250620134644.png",
-    "Pasted image 20250620134306.png",
     "Pasted image 20250620134257.png",
     "Untitled.md",
     "dailylog1.md",
