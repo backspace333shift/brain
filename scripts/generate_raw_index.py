@@ -17,7 +17,7 @@ if not os.path.exists(output_dir):
     print(f"[INFO] Created output directory: {output_dir}")
 
 # Base URLs
-GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain/output"
+GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
 RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
 index_lines = ["<html><body><h1>Notes Index</h1><ul>"]
@@ -30,8 +30,9 @@ for root, _, files in os.walk(notes_dir):
         if file.endswith(".md"):
             full_path = os.path.join(root, file)
             relative_md_path = os.path.relpath(full_path, notes_dir)
-            relative_html_path = relative_md_path.replace(".md", ".html")
-            output_path = os.path.join(output_dir, relative_html_path)
+            base_name = os.path.splitext(os.path.basename(relative_md_path))[0]
+            output_filename = f"{base_name}.html"
+            output_path = os.path.join(output_dir, output_filename)
 
             print(f"[PROCESSING] {relative_md_path}")
             with open(full_path, 'r', encoding='utf-8') as f:
@@ -39,7 +40,7 @@ for root, _, files in os.walk(notes_dir):
 
             html = markdown.markdown(text)
 
-            title = relative_md_path.replace(".md", "")
+            title = base_name
             full_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,13 +54,12 @@ for root, _, files in os.walk(notes_dir):
 </body>
 </html>"""
 
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(full_html)
 
-            encoded_path = quote(relative_html_path.replace(os.sep, "/"))
-            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"
-            raw_url = f"{RAW_BASE}/{encoded_path}"
+            encoded_name = quote(output_filename)
+            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_name}"
+            raw_url = f"{RAW_BASE}/{encoded_name}"
             display_name = title
 
             index_lines.append(f'<li><a href="{rendered_url}">{display_name}</a> [<a href="{raw_url}">raw</a>]</li>')
