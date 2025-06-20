@@ -15,7 +15,7 @@ if not os.path.exists(output_dir):
     print(f"[INFO] Created output directory: {output_dir}")
 
 # Base URLs
-GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain/output"
+GITHUB_PAGES_BASE = "https://backspace333shift.github.io"  # no /output here!
 RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
 index_lines = ["<html><body><h1>Notes Index</h1><ul>"]
@@ -47,12 +47,12 @@ for root, _, files in os.walk(notes_dir):
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(html)
 
-            # Encode for URL
-            ENCODED_PATH = relative_html_path.replace(os.sep, "%20")
+            # URL-encode path for web usage
+            encoded_path = relative_html_path.replace(" ", "%20").replace(os.sep, "/")
 
             # Construct URLs
-            rendered_url = f"{GITHUB_PAGES_BASE}/{ENCODED_PATH}"
-            raw_url = f"{RAW_BASE}/{ENCODED_PATH}"
+            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"
+            raw_url = f"{RAW_BASE}/{encoded_path}"
             display_name = relative_md_path.replace(".md", "")
 
             # Add both links to index
@@ -62,6 +62,7 @@ for root, _, files in os.walk(notes_dir):
 
             found_files.append(relative_md_path)
 
+# Finalize and write index
 if found_files:
     index_lines.append("</ul></body></html>")
     index_path = os.path.join(output_dir, "index.html")
