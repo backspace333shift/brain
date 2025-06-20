@@ -1,5 +1,0 @@
-- whats the work of sitemap
-- ![[Pasted image 20250620134257.png]]
-- ![[Pasted image 20250620134306.png]]
-- ![[Pasted image 20250620134644.png]]
-- ![[Pasted image 20250620134655.png]].
