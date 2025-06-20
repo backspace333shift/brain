@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "validation_test.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "validation_test"
+              "title": "Untitled"
             }
           }
         ]
@@ -180,6 +180,8 @@
   },
   "active": "d7e8c2ee56cde81c",
   "lastOpenFiles": [
+    "validation_test.md",
+    "Untitled.md",
     "PLANS/WEEK3.md",
     "PLANS/WEEK4.md",
     "PLANS/WEEK2.md",
@@ -190,7 +192,6 @@
     "PLANS/WEEK 1.md",
     "PLANS",
     "test note.md",
-    "validation_test.md",
     "mind/hi 123.md",
     "mind/okay.md",
     "notes/mind/Untitled.md",
