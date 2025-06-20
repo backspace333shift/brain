@@ -1,0 +1,27 @@
+[
+  {
+    "title": "dailylog1",
+    "anchor": "dailylog1",
+    "path": "dailylog1.md"
+  },
+  {
+    "title": "PLANS/WEEK1",
+    "anchor": "PLANS_WEEK1",
+    "path": "PLANS/WEEK1.md"
+  },
+  {
+    "title": "PLANS/WEEK2",
+    "anchor": "PLANS_WEEK2",
+    "path": "PLANS/WEEK2.md"
+  },
+  {
+    "title": "PLANS/WEEK3",
+    "anchor": "PLANS_WEEK3",
+    "path": "PLANS/WEEK3.md"
+  },
+  {
+    "title": "PLANS/WEEK4",
+    "anchor": "PLANS_WEEK4",
+    "path": "PLANS/WEEK4.md"
+  }
+]
