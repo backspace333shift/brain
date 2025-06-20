@@ -1,50 +1,42 @@
 [
   {
-    "title": "validation_test",
-    "rendered_url": "https://backspace333shift.github.io/brain/validation_test.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/validation_test.html",
-    "path": "validation_test.md"
-  },
-  {
-    "title": "fixes",
-    "rendered_url": "https://backspace333shift.github.io/brain/fixes.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/fixes.html",
-    "path": "fixes.md"
-  },
-  {
     "title": "Untitled",
-    "rendered_url": "https://backspace333shift.github.io/brain/Untitled.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/Untitled.html",
+    "anchor": "Untitled",
     "path": "Untitled.md"
   },
   {
     "title": "dailylog1",
-    "rendered_url": "https://backspace333shift.github.io/brain/dailylog1.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/dailylog1.html",
+    "anchor": "dailylog1",
     "path": "dailylog1.md"
   },
   {
+    "title": "fixes",
+    "anchor": "fixes",
+    "path": "fixes.md"
+  },
+  {
+    "title": "validation_test",
+    "anchor": "validation_test",
+    "path": "validation_test.md"
+  },
+  {
+    "title": "PLANS/WEEK1",
+    "anchor": "PLANS_WEEK1",
+    "path": "PLANS/WEEK1.md"
+  },
+  {
     "title": "PLANS/WEEK2",
-    "rendered_url": "https://backspace333shift.github.io/brain/PLANS/WEEK2.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/PLANS/WEEK2.html",
+    "anchor": "PLANS_WEEK2",
     "path": "PLANS/WEEK2.md"
   },
   {
     "title": "PLANS/WEEK3",
-    "rendered_url": "https://backspace333shift.github.io/brain/PLANS/WEEK3.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/PLANS/WEEK3.html",
+    "anchor": "PLANS_WEEK3",
     "path": "PLANS/WEEK3.md"
   },
   {
-    "title": "PLANS/WEEK1",
-    "rendered_url": "https://backspace333shift.github.io/brain/PLANS/WEEK1.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/PLANS/WEEK1.html",
-    "path": "PLANS/WEEK1.md"
-  },
-  {
     "title": "PLANS/WEEK4",
-    "rendered_url": "https://backspace333shift.github.io/brain/PLANS/WEEK4.html",
-    "raw_url": "https://raw.githubusercontent.com/backspace333shift/brain/main/output/PLANS/WEEK4.html",
+    "anchor": "PLANS_WEEK4",
     "path": "PLANS/WEEK4.md"
   }
 ]
