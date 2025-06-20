@@ -5,10 +5,12 @@ import json
 notes_dir = "notes"
 output_dir = "output"
 html_index_path = os.path.join(output_dir, "index.html")
+txt_index_path = os.path.join(output_dir, "brain-index.txt")
 
 os.makedirs(output_dir, exist_ok=True)
 
 json_objects = []
+txt_sections = []
 found_files = 0
 
 for root, _, files in os.walk(notes_dir):
@@ -22,6 +24,7 @@ for root, _, files in os.walk(notes_dir):
                 md_content = f.read()
                 html_content = markdown.markdown(md_content, extensions=['fenced_code', 'tables'])
 
+            # JSON object
             json_objects.append({
                 "title": note_title,
                 "path": relative_md_path,
@@ -29,9 +32,17 @@ for root, _, files in os.walk(notes_dir):
                 "html": html_content
             })
 
+            # TXT section
+            txt_sections.append(f"""---\n# {note_title}\nPath: {relative_md_path}\n\n{md_content.strip()}\n""")
+
             found_files += 1
 
 if found_files:
+    # Write TXT index
+    with open(txt_index_path, 'w', encoding='utf-8') as f:
+        f.write("\n".join(txt_sections))
+
+    # Write HTML with embedded JSON
     json_data_inline = json.dumps(json_objects, indent=2, ensure_ascii=False)
 
     with open(html_index_path, 'w', encoding='utf-8') as f:
@@ -70,7 +81,8 @@ if found_files:
 </body>
 </html>""")
 
-    print(f"\n✅ Unified HTML with embedded JSON generated with {found_files} notes.")
+    print(f"\n✅ HTML + TXT index generated with {found_files} notes.")
     print(f"- HTML Output: {html_index_path}")
+    print(f"- TXT Output: {txt_index_path}")
 else:
     print("[WARNING] No Markdown (.md) files found in the notes directory.")
