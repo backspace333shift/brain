@@ -32,17 +32,17 @@ jobs:
       - name: Install dependencies
         run: pip install markdown
 
-      - name: Generate HTML and Index
+      - name: Generate Unified Notes Page
         run: |
           mkdir -p output
-          python scripts/generate_raw_index.py
+          python scripts/generate_unified_notes.py
 
-      - name: Commit generated HTML to main
+      - name: Commit generated files to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f output/
-          git commit -m "Auto-update: Regenerated HTML and index" || echo "No changes to commit"
+          git commit -m "Auto-update: Regenerated unified notes and indexes" || echo "No changes to commit"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: output  # ✅ deploy only the output/ directory
+          path: output
 
   deploy:
     runs-on: ubuntu-latest
