@@ -14,8 +14,9 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
     print(f"[INFO] Created output directory: {output_dir}")
 
-# Base URL for GitHub Pages
-GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
+# Base URLs
+GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain/output"
+RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
 index_lines = ["<html><body><h1>Notes Index</h1><ul>"]
 
@@ -46,13 +47,19 @@ for root, _, files in os.walk(notes_dir):
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(html)
 
-            # Construct GitHub Pages link to HTML
-            html_url = f"{GITHUB_PAGES_BASE}/{relative_html_path.replace(os.sep, '%20')}"
+            # Encode for URL
+            ENCODED_PATH = relative_html_path.replace(os.sep, "%20")
 
-            # Add to index with only HTML link
+            # Construct URLs
+            rendered_url = f"{GITHUB_PAGES_BASE}/{ENCODED_PATH}"
+            raw_url = f"{RAW_BASE}/{ENCODED_PATH}"
+            display_name = relative_md_path.replace(".md", "")
+
+            # Add both links to index
             index_lines.append(
-                f'<li><a href="{html_url}">{relative_md_path}</a></li>'
+                f'<li><a href="{rendered_url}">{display_name}</a> [<a href="{raw_url}">raw</a>]</li>'
             )
+
             found_files.append(relative_md_path)
 
 if found_files:
@@ -64,4 +71,3 @@ if found_files:
     print(f"[INFO] Index file written to: {index_path}")
 else:
     print("[WARNING] No Markdown (.md) files found in the notes directory.")
-
