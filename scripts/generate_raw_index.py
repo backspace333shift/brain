@@ -6,6 +6,7 @@ notes_dir = "notes"
 output_dir = "output"
 sitemap_path = os.path.join(output_dir, "sitemap.xml")
 
+# ✅ GitHub Pages will serve files from /output/ as the site root
 GITHUB_PAGES_BASE = "https://backspace333shift.github.io/brain"
 RAW_BASE = "https://raw.githubusercontent.com/backspace333shift/brain/main/output"
 
@@ -16,6 +17,9 @@ sitemap_lines = [
 ]
 
 found_files = []
+
+# Ensure output directory exists
+os.makedirs(output_dir, exist_ok=True)
 
 for root, _, files in os.walk(notes_dir):
     for file in files:
@@ -49,13 +53,16 @@ for root, _, files in os.walk(notes_dir):
                 f.write(full_html)
 
             encoded_path = quote(relative_html_path.replace(os.sep, "/"))
-            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"  # ✅ no 'output' here
-            raw_url = f"{RAW_BASE}/{encoded_path}"
+            rendered_url = f"{GITHUB_PAGES_BASE}/{encoded_path}"     # ✅ No "/output" prefix
+            raw_url = f"{RAW_BASE}/{encoded_path}"                   # ✅ Raw still includes "/output"
 
-            index_lines.append(f'<li><a href="{rendered_url}">{title}</a> [<a href="{raw_url}">raw</a>]</li>')
+            index_lines.append(
+                f'<li><a href="{rendered_url}">{title}</a> [<a href="{raw_url}">raw</a>]</li>'
+            )
             sitemap_lines.append(f"<url><loc>{rendered_url}</loc></url>")
             found_files.append(relative_md_path)
 
+# Write index.html and sitemap.xml
 if found_files:
     index_lines.append("</ul></body></html>")
     with open(os.path.join(output_dir, "index.html"), 'w', encoding='utf-8') as f:

@@ -37,7 +37,7 @@ jobs:
           mkdir -p output
           python scripts/generate_raw_index.py
 
-      - name: Commit updated HTML and index
+      - name: Commit generated HTML to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -47,10 +47,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Pages artifact
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: output  # <== ✅ your flattened output folder
+          path: output  # ✅ deploy only the output/ directory
 
   deploy:
     runs-on: ubuntu-latest
