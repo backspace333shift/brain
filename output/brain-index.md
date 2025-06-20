@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Brain Notes (Markdown Index)</title>
-</head>
-<body>
-<pre>
 # 🧠 Brain Index
 
 ## Table of Contents
@@ -2890,7 +2882,3 @@ Let me know if you want a PDF version or a visual protocol map to streamline exe
 
 Let me know if you want this converted into a printable layout, structured app screen, Notion format, or layered protocol card set.
 
-
-</pre>
-</body>
-</html>
