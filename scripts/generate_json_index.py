@@ -4,7 +4,7 @@ import json
 
 notes_dir = "notes"
 output_dir = "output"
-json_index_path = os.path.join(output_dir, "brain-index.json")
+html_index_path = os.path.join(output_dir, "index.html")
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -32,10 +32,45 @@ for root, _, files in os.walk(notes_dir):
             found_files += 1
 
 if found_files:
-    with open(json_index_path, 'w', encoding='utf-8') as f:
-        json.dump(json_objects, f, indent=2, ensure_ascii=False)
+    json_data_inline = json.dumps(json_objects, indent=2, ensure_ascii=False)
 
-    print(f"\n✅ JSON-only index generated with {found_files} notes.")
-    print(f"- JSON Output: {json_index_path}")
+    with open(html_index_path, 'w', encoding='utf-8') as f:
+        f.write(f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brain Index</title>
+  <style>
+    body {{
+      font-family: system-ui, sans-serif;
+      padding: 2em;
+    }}
+    pre {{
+      background: #f0f0f0;
+      padding: 1em;
+      border-radius: 8px;
+      overflow-x: auto;
+    }}
+  </style>
+</head>
+<body>
+  <h1>🧠 Brain Index</h1>
+  <p>This is an embedded JSON view of all Markdown notes.</p>
+  <pre id="viewer">Loading...</pre>
+
+  <script id="brain-data" type="application/json">
+{json_data_inline}
+  </script>
+
+  <script>
+    const raw = document.getElementById('brain-data').textContent;
+    const data = JSON.parse(raw);
+    document.getElementById('viewer').textContent = JSON.stringify(data, null, 2);
+  </script>
+</body>
+</html>""")
+
+    print(f"\n✅ Unified HTML with embedded JSON generated with {found_files} notes.")
+    print(f"- HTML Output: {html_index_path}")
 else:
     print("[WARNING] No Markdown (.md) files found in the notes directory.")
