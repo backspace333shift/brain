@@ -165,7 +165,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 230.5
+    "width": 230.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,7 +179,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "297e63e16d59b08c",
+  "active": "c236c465d67e0e9d",
   "lastOpenFiles": [
     "Untitled.md",
     "chatgpt instructions while accessing site.md",
