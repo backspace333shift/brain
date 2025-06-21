@@ -31,6 +31,9 @@
     - [BLOCK 5 (75–90 min): Tissue Recovery + Parasympathetic Shift](#plansweek4-block-5-7590-min-tissue-recovery--parasympathetic-shift)
   - [Key Movement Conversions](#plansweek4-key-movement-conversions)
   - [End-State Outcome After Phase 4](#plansweek4-end-state-outcome-after-phase-4)
+- [Excalidraw Data](#attachmentsuntitled-2025-06-21-151507excalidraw-excalidraw-data)
+  - [Text Elements](#attachmentsuntitled-2025-06-21-151507excalidraw-text-elements)
+  - [Drawing](#attachmentsuntitled-2025-06-21-151507excalidraw-drawing)
 
 ---
 
@@ -40,6 +43,8 @@
 <!-- path: Untitled.md -->
 
 supp bitches I would not say but I should get the work done at 7:30 AM and then I should go for a bath would you like me to do anything else this is not easy I know but still bullet point slash dot
+
+![[Untitled 2025-06-21 15.15.07.excalidraw]]
 
 
 <!-- anchor: chatgpt-instructions-while-accessing-site -->
@@ -2932,4 +2937,29 @@ Let me know if you want a PDF version or a visual protocol map to streamline exe
 ✅ Ready for **split hypertrophy training** next month
 
 Let me know if you want this converted into a printable layout, structured app screen, Notion format, or layered protocol card set.
+
+
+<!-- anchor: attachmentsuntitled-2025-06-21-151507excalidraw -->
+# attachments/Untitled 2025-06-21 15.15.07.excalidraw
+<!-- meta: {'excalidraw-plugin': 'parsed', 'tags': ['excalidraw']} -->
+<!-- path: attachments/Untitled 2025-06-21 15.15.07.excalidraw.md -->
+
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
+
+
+# Excalidraw Data
+
+## Text Elements
+%%
+## Drawing
+```compressed-json
+N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebQBGOIAWGjoghH0EDihmbgBtAF1+CFw4OABlKKhxVFAwSHUMmohiXFIAa1T6hkIECgAhXGx25VJhDmIAYTZ8NlJuCABiADNV
+
+ta7IbBFA7IBJav1KsfaEadn5iUX4hGvrjYgt0h2ofYzB4dHxqZm5hahyDjMOBtLJQe6PZ6vfQAMUI+HwlRgwQWgg84O2oKhRzYJwA6iR1Nw+OBNhi9gdsSdEciJKiSOinpiDgAlYTKSQccK5NDxfikxnkjIAeWB2DUMG48QADFK+Q8yS8DtDOFBobh9HCJWgAKxyiFMjLK7LlQhGGo8WUk+UCxUZAAqWCgAEEiMouBJgsswXqFVioqRnU82BRJCF
+
+iNwOEJ4T6bVCAKITJ1BkNhhZtMZUGOQg5JjN2+DNMZCCb3ZjYMbwgAa3AA7AA2YndMsV/AATW4STrAGZtDwa12kl2a7qrUY2AZuHVuvQCEIavESQBfLMG/Ss4vETnMbnoIsluWjEgms1Ey3dQ/ESoIODcEfn0gkACybGICATuE0wXDaGWBDCB4fb5zknElIH6GZv13ZRNFwAAKHh4hraheEQ5CEKQ1ApW0bUAEoNkgZkEGUKM2gWUhoLgngu1lXh
+
+qLQujMOwvClxXY1/hxBARSgdhAQjKN8DlZZyEyQiJiYQgOGUED6kgLIPy/bh/jnPlNiIG80CUhAVIgDh1RqTTtOEKAiE5RTSDnFirTsAArBBsBycpdLgZ9X3fT8EEg398H/K0hm4xg7XHfBpO6WBEBRdJ7J4/D5WYKADHzcK0EjaNQIgWZhg87gvJ8mSICEgxyki7jOGyv8tLS/BQmdKKAqCvj4SXcBlzoZY4XCSdFxARcgA
+```
+%%
 
